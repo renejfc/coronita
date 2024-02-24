@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "strict": true,
+    "target": "ESNext",
+    "module": "Node16",
+    "jsx": "react-jsx",
+    "moduleResolution": "Node16",
+    "jsxImportSource": "@lilybird/jsx",
+    "types": ["bun-types", "./globals"],
+  },
+  "include": ["src/**/*"],
+}
