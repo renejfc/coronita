@@ -1,5 +1,5 @@
-import { createClient, Intents } from "lilybird";
-import { createHandler } from "@lilybird/handlers";
+import { createClient, Intents } from "lilybird"
+import { createHandler } from "@lilybird/handlers/simple"
 
 const listeners = await createHandler({
   dirs: {
@@ -9,9 +9,9 @@ const listeners = await createHandler({
 });
 
 await createClient({
-  token: process.env.TOKEN,
+  token: Bun.env.TOKEN,
   intents: [
     Intents.GUILDS,
   ],
   ...listeners,
-});
+})
