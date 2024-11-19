@@ -1,17 +1,27 @@
 {
-  "version": "0.1",
-  "private": true,
   "name": "coronita",
+  "description": "private discord bot",
+  "version": "0.1.0",
   "type": "module",
+  "private": true,
   "scripts": {
-    "start": "NODE_ENV=production bun src/index.ts"
+    "build": "robo build",
+    "deploy": "robo deploy",
+    "dev": "robox dev",
+    "doctor": "sage doctor",
+    "invite": "robo invite",
+    "start": "robo start",
+    "upgrade": "sage upgrade"
   },
   "dependencies": {
-    "@lilybird/handlers": "^0.4.0",
-    "@lilybird/jsx": "^0.2.0",
-    "lilybird": "^0.6.0"
+    "discord.js": "^14.16.3",
+    "extensionless": "^1.9.9",
+    "robo.js": "^0.10.22"
   },
   "devDependencies": {
-    "bun-types": "^1.1.6"
-  }
+    "@swc/core": "^1.7.39",
+    "@types/node": "^22.9.0",
+    "typescript": "^5.6.3"
+  },
+  "packageManager": "pnpm@9.13.2+sha512.88c9c3864450350e65a33587ab801acf946d7c814ed1134da4a924f6df5a2120fd36b46aab68f7cd1d413149112d53c7db3a4136624cfd00ff1846a0c6cef48a"
 }
