@@ -1,5 +1,5 @@
-import { Client, GatewayIntentBits } from 'discord.js'
-import { portal } from 'robo.js'
+import { type Client, GatewayIntentBits } from "discord.js"
+import { portal } from "robo.js"
 
 const REQUIRED_INTENTS: Record<string, GatewayIntentBits | GatewayIntentBits[]> = {
   guildCreate: GatewayIntentBits.Guilds,
@@ -52,14 +52,14 @@ const REQUIRED_INTENTS: Record<string, GatewayIntentBits | GatewayIntentBits[]> 
   autoModerationRuleCreate: GatewayIntentBits.AutoModerationConfiguration,
   autoModerationRuleUpdate: GatewayIntentBits.AutoModerationConfiguration,
   autoModerationRuleDelete: GatewayIntentBits.AutoModerationConfiguration,
-  autoModerationActionExecution: GatewayIntentBits.AutoModerationExecution
+  autoModerationActionExecution: GatewayIntentBits.AutoModerationExecution,
   // Not in DJS, listed on discord api
   // https://discord.com/developers/docs/topics/gateway#gateway-intents
   // 'messagePollVoteAdd': GatewayIntentBits.GuildMessagePolls,
   // 'messagePollVoteRemove': GatewayIntentBits.GuildMessagePolls
 }
 
-export default function checkIntents(client: Client) {
+export function checkIntents(client: Client) {
   // Sets ensure that each element is unique
   const missingIntents = new Set()
   const events = portal.events.keys() as string[]
@@ -84,7 +84,9 @@ export default function checkIntents(client: Client) {
           missingIntents.add(bit)
         }
       }
+      // biome-ignore lint: "idk"
       continue
+      // biome-ignore lint: "idk"
     } else if ((intents & requiredBit) === 0) {
       // If the bit is not set then we need to log it
       missingIntents.add(requiredBit)
@@ -99,7 +101,7 @@ export default function checkIntents(client: Client) {
   const EventNames = Object.fromEntries(Object.entries(GatewayIntentBits).map(([key, value]) => [value, key])) // flip key and value for faster lookup
   // Convert it to an array so we can
   const missingIntentNames = Array.from(missingIntents).map((bit) => {
-    return EventNames[bit as string] ?? 'unknown'
+    return EventNames[bit as string] ?? "unknown"
   })
-  console.error(`Missing intents: ${missingIntentNames.join(', ')}`)
+  console.error(`Missing intents: ${missingIntentNames.join(", ")}`)
 }

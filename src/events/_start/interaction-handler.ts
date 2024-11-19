@@ -2,7 +2,7 @@ import { readdirSync } from "node:fs"
 import { join } from "node:path"
 import { pathToFileURL } from "node:url"
 
-type Handler = (...args: any[]) => Promise<void>
+type Handler = (...args: unknown[]) => Promise<void>
 
 type HandlerModule = {
   customID: string

@@ -11,15 +11,18 @@
     "doctor": "sage doctor",
     "invite": "robo invite",
     "start": "robo start",
-    "upgrade": "sage upgrade"
+    "upgrade": "sage upgrade",
+    "biome:check": "biome check --write .",
+    "biome:lint": "biome lint ."
   },
   "dependencies": {
     "discord.js": "^14.16.3",
     "extensionless": "^1.9.9",
-    "robo.js": "^0.10.22"
+    "robo.js": "^0.10.25"
   },
   "devDependencies": {
-    "@swc/core": "^1.7.39",
+    "@biomejs/biome": "1.9.4",
+    "@swc/core": "^1.9.2",
     "@types/node": "^22.9.0",
     "typescript": "^5.6.3"
   },

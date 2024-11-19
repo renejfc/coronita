@@ -1,9 +1,9 @@
-import { ModalSubmitInteraction } from 'discord.js'
+import type { ModalSubmitInteraction } from "discord.js"
 
-export const customID = 'say'
+export const customID = "say"
 
 export default async (interaction: ModalSubmitInteraction) => {
-  const message = interaction.fields.getTextInputValue('message')
+  const message = interaction.fields.getTextInputValue("message")
   await interaction.deferReply({ ephemeral: true })
 
   try {
@@ -12,6 +12,6 @@ export default async (interaction: ModalSubmitInteraction) => {
     }
     await interaction.deleteReply()
   } catch (error) {
-    await interaction.editReply('Failed to send message')
+    await interaction.editReply("Failed to send message")
   }
 }
