@@ -1,8 +1,11 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# robo.js
+# custom
 .robo
 
+# Ignore all .env files except .env.example (order matters)
+.env*
+!.env.example
+
+# template ------------------------------------------------------------------------------
 # dependencies
 /node_modules
 /.pnp
@@ -20,10 +23,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
-
-# local env files
-.env
-.env*.local
 
 # typescript
 *.tsbuildinfo
