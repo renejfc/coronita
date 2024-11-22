@@ -18,7 +18,7 @@
   "dependencies": {
     "discord.js": "^14.16.3",
     "extensionless": "^1.9.9",
-    "robo.js": "https://pkg.pr.new/Wave-Play/robo.js@1a0c503"
+    "robo.js": "^0.10.26"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
@@ -27,5 +27,8 @@
     "@types/node": "^22.9.1",
     "typescript": "^5.6.3"
   },
-  "trustedDependencies": ["@biomejs/biome", "@swc/core"]
+  "trustedDependencies": [
+    "@biomejs/biome",
+    "@swc/core"
+  ]
 }

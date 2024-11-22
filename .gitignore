@@ -1,9 +1,13 @@
 # custom
 .robo
 
-# Ignore all .env files except .env.example (order matters)
+# ignore all .env files except .env.example (order matters)
 .env*
 !.env.example
+
+# all package-locks except current
+*-lock.json
+*.lock
 
 # template ------------------------------------------------------------------------------
 # dependencies
